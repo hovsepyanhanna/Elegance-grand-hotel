@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ÉLÉGANCE GRAND HOTEL — A luxury resort escape where nature, elegance and exceptional hospitality meet.">
+<title>ÉLÉGANCE GRAND HOTEL | Luxury Resort</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#102d25;
+  --green2:#183e32;
+  --green3:#244d3d;
+  --gold:#c9ad78;
+  --gold-light:#e6d6b4;
+  --cream:#f7f5ef;
+  --white:#fff;
+  --ink:#1c2924;
+  --muted:#7a827c;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'DM Sans',sans-serif;
+  --shadow:0 20px 60px rgba(0,0,0,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1180px,90%);margin:auto}
+.section{padding:110px 0}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.section-title{font:500 clamp(40px,5vw,64px)/1.04 var(--serif);color:var(--green);margin:17px 0}
+.section-text{font-size:14px;line-height:1.9;color:#727a74;max-width:570px}
+.center{text-align:center}
+.center .section-text{margin:auto}
+.gold-line{width:55px;height:1px;background:var(--gold);margin:22px 0}
+.center .gold-line{margin:22px auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 27px;background:var(--gold);color:var(--green);border:1px solid var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:.3s}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:var(--green)}
+/* TOP BAR */
+.topbar{background:#0b211b;color:#d8d2c5;padding:10px 5%;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.topbar a{color:var(--gold-light)}
+/* HEADER */
+header{position:absolute;top:35px;left:0;width:100%;z-index:20;padding:24px 5%;display:flex;align-items:center;justify-content:space-between;color:white;border-bottom:1px solid rgba(255,255,255,.2)}
+.logo{font:600 27px var(--serif);letter-spacing:3px;line-height:1}
+.logo small{display:block;font:9px var(--sans);letter-spacing:5px;text-align:center;margin-top:7px;color:var(--gold)}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s}
+.nav a:hover{color:var(--gold)}
+.header-book{padding:13px 20px;border:1px solid var(--gold);color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:26px}
+/* HERO */
+.hero{height:850px;min-height:680px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:white;background:linear-gradient(90deg,rgba(4,23,17,.64),rgba(4,23,17,.18)),url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2200&q=90') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,20,15,.45),transparent 60%)}
+.hero-content{position:relative;z-index:1;padding:80px 20px;animation:heroIn 1.2s ease}
+.hero .eyebrow{color:var(--gold-light)}
+.hero h1{font:400 clamp(60px,9vw,112px)/.92 var(--serif);letter-spacing:2px;margin:28px 0}
+.hero h1 em{color:var(--gold-light);font-weight:400}
+.hero p{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#eee;margin-bottom:36px}
+.hero-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.scroll-note{position:absolute;z-index:2;bottom:35px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:3px;color:white;text-transform:uppercase}
+.scroll-note:after{content:"";display:block;width:1px;height:40px;background:var(--gold);margin:15px auto 0}
+/* BOOKING */
+.booking-wrap{position:relative;z-index:5;margin-top:-1px;background:var(--green);padding:0 5%}
+.booking-bar{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr) 180px;align-items:center}
+.booking-field{padding:25px 22px;border-right:1px solid rgba(255,255,255,.14)}
+.booking-field label{display:block;color:var(--gold);font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px}
+.booking-field input,.booking-field select{width:100%;background:transparent;border:0;outline:0;color:white;font-size:13px}
+.booking-field select option{color:var(--green)}
+.booking-field input::-webkit-calendar-picker-indicator{filter:invert(1)}
+.booking-submit{height:100%;background:var(--gold);border:0;color:var(--green);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:.3s}
+.booking-submit:hover{background:var(--gold-light)}
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.intro-image{position:relative;padding:0 35px 35px 0}
+.intro-image img{height:570px}
+.intro-image:after{content:"";position:absolute;right:0;bottom:0;width:75%;height:70%;border:1px solid var(--gold);z-index:-1}
+.intro-copy{padding:30px 0}
+.signature{font:italic 30px var(--serif);color:var(--green);margin-top:28px}
+/* FEATURES */
+.features{background:var(--green);color:white;padding:65px 0}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.feature{text-align:center;padding:12px}
+.feature-icon{font-size:28px;color:var(--gold);margin-bottom:16px}
+.feature h3{font:500 25px var(--serif);margin-bottom:8px}
+.feature p{font-size:11px;color:#b8c5bd;line-height:1.7}
+/* ROOMS */
+.rooms{background:#eeece4}
+.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:55px}
+.room-card{background:white;box-shadow:0 10px 30px rgba(0,0,0,.04);transition:.4s}
+.room-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.room-img{height:290px;overflow:hidden;position:relative}
+.room-img img{height:100%;transition:transform .8s}
+.room-card:hover .room-img img{transform:scale(1.06)}
+.room-tag{position:absolute;top:18px;left:18px;background:var(--green);color:var(--gold-light);padding:9px 13px;font-size:8px;letter-spacing:2px;text-transform:uppercase}
+.room-info{padding:28px}
+.room-info h3{font:500 31px var(--serif);color:var(--green);margin-bottom:8px}
+.room-info p{font-size:12px;color:var(--muted);line-height:1.8}
+.room-meta{display:flex;justify-content:space-between;border-top:1px solid #eee;margin-top:20px;padding-top:18px;font-size:10px;color:var(--green);letter-spacing:1px;text-transform:uppercase}
+.room-meta a{color:#9a8055}
+/* EXPERIENCE */
+.experience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:50px}
+.experience-card{position:relative;height:420px;overflow:hidden;color:white}
+.experience-card img{height:100%;transition:transform .8s}
+.experience-card:hover img{transform:scale(1.06)}
+.experience-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 75%)}
+.experience-content{position:absolute;z-index:1;bottom:35px;left:35px;right:35px}
+.experience-content span{font-size:9px;letter-spacing:3px;color:var(--gold-light);text-transform:uppercase}
+.experience-content h3{font:500 39px var(--serif);margin:8px 0}
+.experience-content p{font-size:12px;line-height:1.7;color:#eee;max-width:400px}
+/* FULL IMAGE BANNER */
+.banner{height:500px;background:linear-gradient(rgba(8,35,27,.4),rgba(8,35,27,.6)),url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=85') center/cover fixed;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
+.banner h2{font:400 clamp(45px,7vw,78px) var(--serif);margin:20px 0}
+.banner p{font-size:11px;letter-spacing:3px;text-transform:uppercase}
+/* DINING */
+.dining-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.dining-image img{height:510px}
+.dining-copy h3{font:500 38px var(--serif);color:var(--green);margin:20px 0}
+.dining-copy p{font-size:13px;line-height:2;color:#737b75;margin-bottom:20px}
+/* SPA */
+.spa{background:var(--green);color:white}
+.spa .section-title{color:white}
+.spa .section-text{color:#c0cbc4}
+.spa-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.spa-grid img{height:570px}
+.spa-list{list-style:none;margin:30px 0}
+.spa-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);font:400 23px var(--serif);display:flex;justify-content:space-between}
+.spa-list span{color:var(--gold);font:11px var(--sans);align-self:center}
+/* EVENTS */
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:45px}
+.event-card img{height:240px}
+.event-card h3{font:500 29px var(--serif);color:var(--green);margin:18px 0 8px}
+.event-card p{font-size:12px;line-height:1.8;color:var(--muted)}
+/* GALLERY */
+.gallery{background:#eeece4}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:12px;margin-top:45px}
+.gallery-grid button{padding:0;border:0;overflow:hidden;background:none}
+.gallery-grid img{height:100%;transition:.5s}
+.gallery-grid button:hover img{transform:scale(1.07)}
+.gallery-grid button:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-grid button:nth-child(4){grid-row:span 2}
+/* REVIEWS */
+.reviews{background:var(--green);color:white}
+.reviews .section-title{color:white}
+.review-box{max-width:780px;margin:50px auto 0;text-align:center}
+.stars{color:var(--gold);letter-spacing:7px;font-size:17px}
+.review-text{font:italic 30px/1.5 var(--serif);margin:25px 0;color:#eee}
+.review-author{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.review-controls{display:flex;justify-content:center;gap:15px;margin-top:30px}
+.review-controls button{border:1px solid var(--gold);background:transparent;color:var(--gold);width:42px;height:42px}
+/* FAQ */
+.faq-wrap{max-width:850px;margin:45px auto 0}
+.faq-item{border-bottom:1px solid #dcded7}
+.faq-question{width:100%;border:0;background:none;text-align:left;padding:22px 0;font:500 24px var(--serif);color:var(--green);display:flex;justify-content:space-between}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-answer p{font-size:13px;line-height:1.9;color:var(--muted);padding:0 0 22px}
+.faq-item.active .faq-answer{max-height:200px}
+.faq-question span{color:var(--gold);font:20px var(--sans)}
+/* CONTACT */
+.contact{background:#eeece4}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:45px}
+.contact-info p{font-size:13px;color:var(--muted);line-height:2;margin:20px 0}
+.contact-detail{margin:25px 0}
+.contact-detail small{display:block;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.contact-detail strong{font:500 23px var(--serif);color:var(--green)}
+.contact-form{background:white;padding:35px}
+.contact-form input,.contact-form textarea{width:100%;padding:15px;border:0;border-bottom:1px solid #ddd;margin-bottom:18px;outline:0;font-size:12px;background:transparent}
+.contact-form textarea{height:100px;resize:vertical}
+/* NEWSLETTER */
+.newsletter{background:#0b211b;color:white;padding:65px 0;text-align:center}
+.newsletter h2{font:500 40px var(--serif);margin:12px 0}
+.newsletter p{font-size:12px;color:#bac5bd;margin-bottom:25px}
+.newsletter form{display:flex;max-width:480px;margin:auto}
+.newsletter input{flex:1;min-width:0;padding:16px;border:1px solid #60756b;background:transparent;color:white;outline:0}
+.newsletter button{border:0;padding:0 22px;background:var(--gold);color:var(--green);font-size:10px;letter-spacing:1px;font-weight:700}
+/* FOOTER */
+footer{background:#071812;color:white;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.footer-about p{font-size:11px;line-height:1.9;color:#aab8af;margin-top:20px;max-width:280px}
+footer h4{font:500 23px var(--serif);color:var(--gold);margin-bottom:20px}
+footer ul{list-style:none}
+footer li{margin:12px 0;font-size:11px;color:#b9c3bd}
+footer li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #2a3d33;margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;gap:20px;color:#8e9b92;font-size:9px;letter-spacing:1px}
+/* MODALS */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{background:var(--cream);max-width:520px;width:100%;padding:40px;position:relative}
+.modal-close{position:absolute;right:18px;top:15px;border:0;background:none;font-size:25px;color:var(--green)}
+.modal-box h2{font:500 38px var(--serif);color:var(--green);margin:10px 0}
+.modal-box p{font-size:12px;line-height:1.8;color:var(--muted);margin:12px 0}
+.modal-box input,.modal-box select{width:100%;padding:13px;margin:7px 0 14px;border:1px solid #ddd;background:white}
+.lightbox img{max-width:90vw;max-height:85vh;width:auto}
+.lightbox .modal-close{color:white;right:25px;top:20px}
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes heroIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+/* RESPONSIVE */
+@media(max-width:950px){
+ .nav{gap:14px}
+ .nav a{font-size:8px}
+ .booking-bar{grid-template-columns:repeat(2,1fr)}
+ .booking-submit{min-height:60px;grid-column:span 2}
+ .booking-field{border-bottom:1px solid rgba(255,255,255,.12)}
+ .intro-grid,.dining-grid,.spa-grid{gap:35px}
+ .room-grid{grid-template-columns:repeat(2,1fr)}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+ .topbar{font-size:8px;gap:8px}
+ header{top:34px;padding:18px 5%}
+ .logo{font-size:22px}
+ .menu-toggle{display:block}
+ .nav{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--green);padding:25px;flex-direction:column;align-items:flex-start}
+ .nav.open{display:flex}
+ .nav a{font-size:11px}
+ .header-book{display:none}
+ .hero{height:720px;min-height:620px}
+ .hero h1{font-size:65px}
+ .hero p{font-size:10px;line-height:1.8}
+ .section{padding:75px 0}
+ .intro-grid,.dining-grid,.spa-grid,.contact-grid{grid-template-columns:1fr}
+ .intro-image img,.dining-image img,.spa-grid img{height:400px}
+ .intro-copy{padding:0}
+ .feature-grid{grid-template-columns:repeat(2,1fr);gap:25px 10px}
+ .room-grid{grid-template-columns:1fr}
+ .room-img{height:260px}
+ .experience-grid{grid-template-columns:1fr}
+ .experience-card{height:360px}
+ .banner{height:390px;background-attachment:scroll}
+ .event-grid{grid-template-columns:1fr}
+ .event-card img{height:260px}
+ .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+ .gallery-grid button:first-child{grid-column:span 2;grid-row:span 1}
+ .gallery-grid button:nth-child(4){grid-row:span 1}
+ .review-text{font-size:24px}
+ .contact-form{padding:25px}
+ .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+ .footer-bottom{flex-direction:column}
+ .newsletter form{width:90%}
+}
+@media(max-width:420px){
+ .topbar span:last-child{display:none}
+ .hero h1{font-size:55px}
+ .booking-bar{grid-template-columns:1fr 1fr}
+ .booking-field{padding:20px 12px}
+ .booking-field input,.booking-field select{font-size:11px}
+ .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+  <span>✦ A WORLD OF EXCEPTIONAL HOSPITALITY</span>
+  <span>Reservations: <a href="mailto:reservations@elegancegrand.example">reservations@elegancegrand.example</a></span>
+</div>
+
+<header>
+  <a href="#home" class="logo">ÉLÉGANCE <small>GRAND HOTEL</small></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav class="nav" id="nav">
+    <a href="#about">Our Story</a>
+    <a href="#rooms">Accommodation</a>
+    <a href="#dining">Dining</a>
+    <a href="#spa">Wellness</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#booking" class="header-book">Book Your Stay</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="eyebrow">A Sanctuary of Timeless Luxury</div>
+  <h1>Escape Into<br><em>Elegance</em></h1>
+  <p>Where extraordinary moments become unforgettable memories</p>
+  <div class="hero-buttons">
+   <a class="btn" href="#rooms">Discover Our Resort</a>
+   <a class="btn btn-outline" href="#experiences">Explore Experiences</a>
+  </div>
+ </div>
+ <div class="scroll-note">Scroll to discover</div>
+</section>
+
+<section class="booking-wrap" id="booking">
+ <form class="booking-bar" id="bookingForm">
+  <div class="booking-field">
+   <label for="checkin">Check In</label>
+   <input type="date" id="checkin" required>
+  </div>
+  <div class="booking-field">
+   <label for="checkout">Check Out</label>
+   <input type="date" id="checkout" required>
+  </div>
+  <div class="booking-field">
+   <label for="guests">Guests</label>
+   <select id="guests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option></select>
+  </div>
+  <div class="booking-field">
+   <label for="roomtype">Accommodation</label>
+   <select id="roomtype"><option>Deluxe Room</option><option>Garden Suite</option><option>Private Villa</option><option>Presidential Suite</option></select>
+  </div>
+  <button class="booking-submit" type="submit">Check Availability →</button>
+ </form>
+</section>
+
+<section class="section" id="about">
+ <div class="container intro-grid">
+  <div class="intro-image reveal">
+   <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Elegant luxury resort architecture">
+  </div>
+  <div class="intro-copy reveal">
+   <div class="eyebrow">The Art of Exceptional Living</div>
+   <h2 class="section-title">A Place Beyond<br>the Ordinary</h2>
+   <div class="gold-line"></div>
+   <p class="section-text">Welcome to ÉLÉGANCE GRAND HOTEL, an exclusive resort created for those who appreciate the beauty of thoughtful details, meaningful experiences and exceptional hospitality.</p>
+   <p class="section-text" style="margin-top:18px">Surrounded by inspiring landscapes, our sanctuary brings together refined architecture, world-class comfort and the warmth of genuine service. Every moment is an invitation to slow down, reconnect and discover a more beautiful way to travel.</p>
+   <div class="signature">The elegance of being elsewhere.</div>
+   <a href="#experiences" class="btn" style="margin-top:25px">Discover Our Story</a>
+  </div>
+ </div>
+</section>
+
+<section class="features">
+ <div class="container feature-grid">
+  <div class="feature reveal"><div class="feature-icon">✧</div><h3>Exceptional Service</h3><p>Personal attention and thoughtful hospitality, always.</p></div>
+  <div class="feature reveal"><div class="feature-icon">♧</div><h3>Natural Serenity</h3><p>A peaceful retreat surrounded by inspiring scenery.</p></div>
+  <div class="feature reveal"><div class="feature-icon">◇</div><h3>Fine Experiences</h3><p>Carefully curated moments made just for you.</p></div>
+  <div class="feature reveal"><div class="feature-icon">⌂</div><h3>Private Comfort</h3><p>Beautiful spaces designed for effortless relaxation.</p></div>
+ </div>
+</section>
+
+<section class="section rooms" id="rooms">
+ <div class="container">
+  <div class="center reveal">
+   <div class="eyebrow">Stay in Exceptional Comfort</div>
+   <h2 class="section-title">Suites & Residences</h2>
+   <div class="gold-line"></div>
+   <p class="section-text">Discover thoughtfully designed spaces where contemporary sophistication meets the tranquillity of nature.</p>
+  </div>
+  <div class="room-grid">
+   <article class="room-card reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Deluxe luxury room"><span class="room-tag">Elegant Comfort</span></div>
+    <div class="room-info"><h3>Deluxe Room</h3><p>A beautifully appointed retreat with refined interiors, a king-size bed and a private balcony.</p><div class="room-meta"><span>2 Guests · 38 m²</span><a href="#booking">Discover →</a></div></div>
+   </article>
+   <article class="room-card reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Garden suite"><span class="room-tag">Guest Favourite</span></div>
+    <div class="room-info"><h3>Garden Suite</h3><p>Generous living spaces, garden-inspired details and a private terrace for peaceful mornings.</p><div class="room-meta"><span>3 Guests · 62 m²</span><a href="#booking">Discover →</a></div></div>
+   </article>
+   <article class="room-card reveal">
+    <div class="room-img"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Private villa"><span class="room-tag">Ultimate Privacy</span></div>
+    <div class="room-info"><h3>Private Villa</h3><p>An exclusive hideaway with spacious interiors, secluded outdoor living and premium amenities.</p><div class="room-meta"><span>4 Guests · 110 m²</span><a href="#booking">Discover →</a></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="experiences">
+ <div class="container">
+  <div class="center reveal"><div class="eyebrow">Discover More Than a Stay</div><h2 class="section-title">Experiences to Remember</h2><div class="gold-line"></div><p class="section-text">From quiet mornings by the water to unforgettable evenings, every experience is designed to inspire.</p></div>
+  <div class="experience-grid">
+   <article class="experience-card reveal"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1100&q=85" alt="Luxury infinity pool"><div class="experience-content"><span>01 · Relaxation</span><h3>Poolside Serenity</h3><p>Spend sunlit afternoons beside our tranquil pools, surrounded by beautiful landscapes.</p></div></article>
+   <article class="experience-card reveal"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1100&q=85" alt="Private beach resort"><div class="experience-content"><span>02 · Nature</span><h3>Nature & Discovery</h3><p>Explore inspiring surroundings through curated outdoor adventures and private excursions.</p></div></article>
+   <article class="experience-card reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=85" alt="Fine dining experience"><div class="experience-content"><span>03 · Gastronomy</span><h3>Exceptional Dining</h3><p>Discover seasonal menus and unforgettable culinary experiences.</p></div></article>
+   <article class="experience-card reveal"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1100&q=85" alt="Luxury spa wellness"><div class="experience-content"><span>04 · Wellbeing</span><h3>Rest & Rejuvenate</h3><p>Restore balance with calming rituals, restorative treatments and moments of stillness.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="banner">
+ <div class="reveal"><div class="eyebrow">Your Private World of Luxury</div><h2>Find Your Own Rhythm</h2><p>Time slows down. Life feels beautiful.</p></div>
+</section>
+
+<section class="section" id="dining">
+ <div class="container dining-grid">
+  <div class="dining-image reveal"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85" alt="Elegant fine dining restaurant"></div>
+  <div class="dining-copy reveal">
+   <div class="eyebrow">A Taste of Excellence</div>
+   <h2 class="section-title">Dining With<br>Distinction</h2>
+   <div class="gold-line"></div>
+   <h3>The Grand Table</h3>
+   <p>Discover a celebration of flavour, artistry and seasonal ingredients. Our culinary team creates thoughtful menus inspired by local traditions and international gastronomy.</p>
+   <p>From leisurely breakfasts to intimate dinners, every meal is an occasion to savour.</p>
+   <a class="btn" href="#contact">Explore Dining</a>
+  </div>
+ </div>
+</section>
+
+<section class="section spa" id="spa">
+ <div class="container spa-grid">
+  <div class="reveal">
+   <div class="eyebrow">The Art of Wellbeing</div>
+   <h2 class="section-title">A Sanctuary<br>for the Senses</h2>
+   <div class="gold-line"></div>
+   <p class="section-text">Step into a world of calm where every detail is designed to restore your energy and reconnect you with yourself.</p>
+   <ul class="spa-list">
+    <li>Signature Massages <span>01</span></li>
+    <li>Thermal Experiences <span>02</span></li>
+    <li>Private Wellness Rituals <span>03</span></li>
+    <li>Beauty & Skin Treatments <span>04</span></li>
+    <li>Yoga & Meditation <span>05</span></li>
+   </ul>
+   <a href="#contact" class="btn">Discover the Spa</a>
+  </div>
+  <div class="reveal"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1100&q=85" alt="Luxury spa wellness retreat"></div>
+ </div>
+</section>
+
+<section class="section" id="events">
+ <div class="container">
+  <div class="center reveal"><div class="eyebrow">Celebrate Beautifully</div><h2 class="section-title">Moments Worth Celebrating</h2><div class="gold-line"></div><p class="section-text">Meaningful occasions deserve extraordinary settings. Let us help you create memories that last.</p></div>
+  <div class="event-grid">
+   <article class="event-card reveal"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Luxury wedding celebration"><h3>Weddings</h3><p>Celebrate your special day in an enchanting setting with thoughtful details and personalised planning.</p></article>
+   <article class="event-card reveal"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85" alt="Luxury corporate event"><h3>Private Events</h3><p>Host memorable gatherings, celebrations and intimate occasions in elegant surroundings.</p></article>
+   <article class="event-card reveal"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=85" alt="Business conference"><h3>Meetings & Retreats</h3><p>Inspire new ideas with exceptional hospitality, versatile spaces and curated experiences.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section gallery" id="gallery">
+ <div class="container">
+  <div class="center reveal"><div class="eyebrow">A Glimpse Into Our World</div><h2 class="section-title">The ÉLÉGANCE Gallery</h2><div class="gold-line"></div><p class="section-text">Explore the atmosphere, architecture and beautiful details of our resort.</p></div>
+  <div class="gallery-grid">
+   <button class="gallery-image" aria-label="View resort image"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85" alt="Resort exterior"></button>
+   <button class="gallery-image" aria-label="View room image"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=85" alt="Luxury room"></button>
+   <button class="gallery-image" aria-label="View pool image"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=700&q=85" alt="Pool"></button>
+   <button class="gallery-image" aria-label="View dining image"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=85" alt="Restaurant"></button>
+   <button class="gallery-image" aria-label="View spa image"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=85" alt="Spa"></button>
+   <button class="gallery-image" aria-label="View nature image"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=85" alt="Nature"></button>
+  </div>
+ </div>
+</section>
+
+<section class="section reviews">
+ <div class="container">
+  <div class="center"><div class="eyebrow">Words From Our Guests</div><h2 class="section-title">Stories That Stay With Us</h2><div class="gold-line"></div></div>
+  <div class="review-box">
+   <div class="stars">★★★★★</div>
+   <p class="review-text" id="reviewText">“An exceptional escape. Every detail felt thoughtful, the surroundings were beautiful, and the hospitality made our stay truly unforgettable.”</p>
+   <div class="review-author" id="reviewAuthor">A Guest's Experience</div>
+   <div class="review-controls"><button id="prevReview" aria-label="Previous review">←</button><button id="nextReview" aria-label="Next review">→</button></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="faq">
+ <div class="container">
+  <div class="center"><div class="eyebrow">Helpful Information</div><h2 class="section-title">Frequently Asked Questions</h2><div class="gold-line"></div></div>
+  <div class="faq-wrap">
+   <div class="faq-item"><button class="faq-question">What time are check-in and check-out? <span>+</span></button><div class="faq-answer"><p>Check-in and check-out times can be confirmed with our reservations team. Please contact us before arrival if you require special arrangements.</p></div></div>
+   <div class="faq-item"><button class="faq-question">Can I request airport transfers? <span>+</span></button><div class="faq-answer"><p>Yes. Private transfer arrangements may be requested in advance through our guest services team.</p></div></div>
+   <div class="faq-item"><button class="faq-question">Does the resort offer spa reservations? <span>+</span></button><div class="faq-answer"><p>Guests can enquire about spa treatments and wellness experiences before or during their stay.</p></div></div>
+   <div class="faq-item"><button class="faq-question">Can the resort host private events? <span>+</span></button><div class="faq-answer"><p>We welcome enquiries for weddings, celebrations, corporate retreats and private gatherings.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container">
+  <div class="center"><div class="eyebrow">We Would Love to Welcome You</div><h2 class="section-title">Begin Your Journey</h2><div class="gold-line"></div><p class="section-text">Our team is here to help you plan a stay that feels effortless, personal and unforgettable.</p></div>
+  <div class="contact-grid">
+   <div class="contact-info">
+    <h3 class="section-title" style="font-size:40px">Get in Touch</h3>
+    <p>Whether you are planning a relaxing escape, a special celebration or a private retreat, we would be delighted to hear from you.</p>
+    <div class="contact-detail"><small>Email</small><strong>hello@elegancegrand.example</strong></div>
+    <div class="contact-detail"><small>Reservations</small><strong>+1 (000) 123-4567</strong></div>
+    <div class="contact-detail"><small>Location</small><strong>Your Destination, Worldwide</strong></div>
+   </div>
+   <form class="contact-form" id="contactForm">
+    <input type="text" id="contactName" placeholder="Your Name" required>
+    <input type="email" id="contactEmail" placeholder="Email Address" required>
+    <input type="text" id="contactSubject" placeholder="Subject">
+    <textarea id="contactMessage" placeholder="Tell us how we can assist you..." required></textarea>
+    <button class="btn" type="submit">Send Enquiry →</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="newsletter">
+ <div class="container">
+  <div class="eyebrow">The Art of Staying Inspired</div>
+  <h2>Receive a Little Elegance</h2>
+  <p>Discover special experiences, thoughtful stories and resort news.</p>
+  <form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Your email address" required><button type="submit">Subscribe →</button></form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-about">
+    <a href="#home" class="logo">ÉLÉGANCE <small>GRAND HOTEL</small></a>
+    <p>A sanctuary of timeless luxury, exceptional hospitality and meaningful experiences. Discover a more beautiful way to travel.</p>
+   </div>
+   <div><h4>Explore</h4><ul><li><a href="#about">Our Story</a></li><li><a href="#rooms">Accommodation</a></li><li><a href="#dining">Dining</a></li><li><a href="#spa">Wellness</a></li></ul></div>
+   <div><h4>Experiences</h4><ul><li><a href="#experiences">Resort Life</a></li><li><a href="#events">Weddings & Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#faq">Guest Information</a></li></ul></div>
+   <div><h4>Connect</h4><ul><li><a href="#contact">Contact Us</a></li><li><a href="#booking">Reservations</a></li><li><a href="#contact">Guest Services</a></li><li><a href="#home">Instagram</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ÉLÉGANCE GRAND HOTEL. ALL RIGHTS RESERVED.</span><span>CRAFTED WITH ELEGANCE · PRIVACY · TERMS</span></div>
+ </div>
+</footer>
+
+<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-box">
+  <button class="modal-close" data-close="bookingModal" aria-label="Close">×</button>
+  <div class="eyebrow">Your Journey Begins Here</div>
+  <h2 id="modalTitle">Your Stay Enquiry</h2>
+  <p id="bookingSummary"></p>
+  <p>Please provide your details. Your email application will open with a prepared enquiry.</p>
+  <form id="bookingEnquiry">
+   <input type="text" id="bookName" placeholder="Full Name" required>
+   <input type="email" id="bookEmail" placeholder="Email Address" required>
+   <button class="btn" type="submit">Prepare Booking Enquiry →</button>
+  </form>
+ </div>
+</div>
+
+<div class="modal lightbox" id="lightbox">
+ <button class="modal-close" data-close="lightbox" aria-label="Close">×</button>
+ <img id="lightboxImage" src="" alt="Gallery enlarged view">
+</div>
+
+<script>
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
+// Mobile navigation
+$('#menuToggle').addEventListener('click',()=>{
+  $('#nav').classList.toggle('open');
+  $('#menuToggle').textContent=$('#nav').classList.contains('open')?'×':'☰';
+});
+$$('#nav a').forEach(link=>link.addEventListener('click',()=>{
+  $('#nav').classList.remove('open');
+  $('#menuToggle').textContent='☰';
+}));
+
+// Set minimum dates
+const today = new Date();
+const localDate = d => {
+  const offset = d.getTimezoneOffset();
+  return new Date(d.getTime()-offset*60000).toISOString().split('T')[0];
+};
+$('#checkin').min=localDate(today);
+$('#checkout').min=localDate(today);
+
+$('#checkin').addEventListener('change',()=>{
+  const date=new Date($('#checkin').value+'T12:00:00');
+  date.setDate(date.getDate()+1);
+  $('#checkout').min=localDate(date);
+  if($('#checkout').value && $('#checkout').value<=$('#checkin').value){
+    $('#checkout').value=localDate(date);
+  }
+});
+
+// Booking enquiry
+$('#bookingForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const checkin=$('#checkin').value;
+  const checkout=$('#checkout').value;
+  if(!checkin || !checkout || checkout<=checkin){
+    alert('Please select valid check-in and check-out dates.');
+    return;
+  }
+  const guests=$('#guests').value;
+  const room=$('#roomtype').value;
+  const nights=Math.round((new Date(checkout)-new Date(checkin))/86400000);
+  $('#bookingSummary').textContent=`${checkin} to ${checkout} · ${nights} night(s) · ${guests} · ${room}`;
+  $('#bookingModal').classList.add('show');
+});
+
+$('#bookingEnquiry').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('#bookName').value;
+  const email=$('#bookEmail').value;
+  const subject='Reservation Enquiry — ÉLÉGANCE GRAND HOTEL';
+  const body=`Hello ÉLÉGANCE GRAND HOTEL,%0D%0A%0D%0AI would like to enquire about a reservation.%0D%0A${$('#bookingSummary').textContent}%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0AKind regards`;
+  window.location.href=`mailto:reservations@elegancegrand.example?subject=${encodeURIComponent(subject)}&body=${body}`;
+});
+
+$$('[data-close]').forEach(button=>{
+  button.addEventListener('click',()=>$('#'+button.dataset.close).classList.remove('show'));
+});
+$$('.modal').forEach(modal=>modal.addEventListener('click',e=>{
+  if(e.target===modal)modal.classList.remove('show');
+}));
+
+// Gallery lightbox
+$$('.gallery-image').forEach(button=>{
+  button.addEventListener('click',()=>{
+    $('#lightboxImage').src=button.querySelector('img').src;
+    $('#lightbox').classList.add('show');
+  });
+});
+
+// Reviews carousel
+const reviews=[
+ {text:'“An exceptional escape. Every detail felt thoughtful, the surroundings were beautiful, and the hospitality made our stay truly unforgettable.”',author:'A Guest’s Experience'},
+ {text:'“A beautiful sanctuary where elegance meets genuine warmth. We left feeling refreshed and already dreaming of our return.”',author:'A Returning Guest'},
+ {text:'“From the peaceful atmosphere to the wonderful dining, every moment felt special. A truly memorable experience.”',author:'A Valued Guest'}
+];
+let reviewIndex=0;
+function showReview(){
+ $('#reviewText').textContent=reviews[reviewIndex].text;
+ $('#reviewAuthor').textContent=reviews[reviewIndex].author;
+}
+$('#nextReview').addEventListener('click',()=>{reviewIndex=(reviewIndex+1)%reviews.length;showReview()});
+$('#prevReview').addEventListener('click',()=>{reviewIndex=(reviewIndex-1+reviews.length)%reviews.length;showReview()});
+
+// FAQ accordion
+$$('.faq-question').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const item=button.closest('.faq-item');
+  const isActive=item.classList.contains('active');
+  $$('.faq-item').forEach(f=>{f.classList.remove('active');f.querySelector('span').textContent='+'});
+  if(!isActive){item.classList.add('active');button.querySelector('span').textContent='−'}
+ });
+});
+
+// Contact form
+$('#contactForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=$('#contactName').value;
+ const email=$('#contactEmail').value;
+ const subject=$('#contactSubject').value||'Website Enquiry';
+ const message=$('#contactMessage').value;
+ const body=`Hello ÉLÉGANCE GRAND HOTEL,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
+ window.location.href=`mailto:hello@elegancegrand.example?subject=${encodeURIComponent(subject)}&body=${body}`;
+});
+
+// Newsletter demo
+$('#newsletterForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ alert('Thank you for your interest! Newsletter subscription requires a connected email marketing service.');
+ $('#newsletterForm').reset();
+});
+
+// Scroll reveal
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+$$('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
